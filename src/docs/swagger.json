@@ -14,7 +14,7 @@
     "/weather": {
       "get": {
         "summary": "Get weather data for a specific city",
-        "description": "Get all the tasks",
+        "description": "Get weather data either current or forecast for a specific city",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -23,7 +23,7 @@
             "description": "City name",
             "required": true,
             "type": "string",
-            "default": "London"
+            "default": "Malmö"
           },
           {
             "name": "type",
@@ -37,15 +37,51 @@
         "responses": {
           "200": {
             "description": "successful operation",
-            "schema": {
-              "type": "object"
-            },
-            "400": {
-              "description": "Invalid query parameter",
-              "schema": {
-                "name": "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Name of the city.",
+                      "example": "Malmö"
+                    },
+                    "main": {
+                      "type": "object",
+                      "description": "Basic info about weather such as temp, humidity, sea-lever, etc.",
+                      "example": {
+                        "temp": 10,
+                        "feels_like": 8.5,
+                        "temp_min": 10,
+                        "temp_max": 10,
+                        "pressure": 1012,
+                        "humidity": 87
+                      }
+
+                    },
+                    "weather": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Information weather condition such as clear sky, rain, etc.",
+                      "example": [
+                        {
+                          "id": 800,
+                          "main": "Clear",
+                          "description": "clear sky",
+                          "icon": "01n"
+                        }
+                      ]
+                    }
+                  }
+                }
               }
             }
+          },
+          "400": {
+            "description": "Invalid query parameter"
           }
         }
       }

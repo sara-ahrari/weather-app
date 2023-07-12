@@ -11,7 +11,6 @@ if (!apiKey) {
 }
 
 const weatherUrl = "https://api.openweathermap.org/data/2.5"
-// const locationUrl =
 
 const router = express.Router()
 
@@ -44,8 +43,8 @@ router.get("/weather", async (req, res, next) => {
       const data: ForecastWeatherInfo = await response.json()
       return res.json({
         city: data.city,
-        weather: data.list.map((item) => {
-          return { main: item.main, state: item.weather }
+        weatherInfo: data.list.map((item) => {
+          return { main: item.main, weather: item.weather }
         }),
       })
     }
