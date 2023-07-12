@@ -1,0 +1,54 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Weather API",
+    "description": "This is a simple NodeJS API to fetch weather data from OpenWeatherMap API.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000"
+    }
+  ],
+  "paths": {
+    "/weather": {
+      "get": {
+        "summary": "Get weather data for a specific city",
+        "description": "Get all the tasks",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "city",
+            "in": "query",
+            "description": "City name",
+            "required": true,
+            "type": "string",
+            "default": "London"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Type of weather data",
+            "required": true,
+            "type": "string",
+            "default": "current"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            },
+            "400": {
+              "description": "Invalid query parameter",
+              "schema": {
+                "name": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
