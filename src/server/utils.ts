@@ -13,13 +13,12 @@ export function getStringQueryParam(req: Request, paramName: string): string {
 
 export function getUrlByType(url: string, type: string): string {
   switch (type) {
-	case "current":
-	  return `${url}/weather`
-	case "forecast":
-	  return `${url}/forecast`
-	default:
-	  throw new Error(`Unknown type ${type}`)
+    case "current":
+      return `${url}/weather`
+    case "forecast":
+      return `${url}/forecast`
+    default:
+      throw new Error(`Unknown type ${type}`)
   }
 }
-
 

@@ -1,4 +1,4 @@
-# Weather App 
+# Weather App 🌤️
 
 ## Table of Contents
 
@@ -9,7 +9,7 @@
   - [Server](#server)
   - [Configuration Files](#configuration-files)
 
-  ## Description 
+## Description 
 
 This is a backend for a weather app where the user can query based on city and type od data they are looking for, current or forecast.
 The project is documented using Swagger.   
@@ -21,6 +21,7 @@ To run the project, follow these steps:
 1. Install the dependencies by running `npm install`.
 2. Start the project with `npm run dev`.
 3. Access the server at http://localhost:8000.
+4. Access the documentation and test the API with Swagger at http://localhost:8000/api-docs
 
 ## Configuration Files
 
