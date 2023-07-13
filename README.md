@@ -11,7 +11,7 @@
 
 ## Description 
 
-his is the backend for a weather app where users can query based on the city and the type of data they are looking for, whether it's current conditions or a forecast. This API utilizes the API from https://openweathermap.org/ to fetch the weather information. 
+This is the backend for a weather app where users can query based on the city and the type of data they are looking for, whether it's current conditions or a forecast. This API utilizes the API from https://openweathermap.org/ to fetch the weather information. 
 The project is documented using Swagger.   
 
 ## Running the Project
