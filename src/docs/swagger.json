@@ -58,7 +58,6 @@
                         "pressure": 1012,
                         "humidity": 87
                       }
-
                     },
                     "weather": {
                       "type": "array",

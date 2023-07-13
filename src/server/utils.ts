@@ -21,4 +21,3 @@ export function getUrlByType(url: string, type: string): string {
       throw new Error(`Unknown type ${type}`)
   }
 }
-

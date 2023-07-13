@@ -53,8 +53,15 @@ router.get("/weather", async (req, res, next) => {
   }
 })
 
-router.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  res.status(400).json({ error: err.message })
-})
+router.use(
+  (
+    err: Error,
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction,
+  ) => {
+    res.status(400).json({ error: err.message })
+  },
+)
 
 export default router
