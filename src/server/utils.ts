@@ -1,5 +1,4 @@
 import { Request } from "express"
-import fetch from "node-fetch"
 
 export function getStringQueryParam(req: Request, paramName: string): string {
   const paramValue = req.query[paramName]
