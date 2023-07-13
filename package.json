@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/server/server.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server/server.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server/server.js\"",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "SaraAhrari",
@@ -28,7 +29,7 @@
     "concurrently": "^8.2.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.44.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.0",
@@ -44,8 +45,8 @@
   },
   "lint-staged": {
     "*.{ts,js}": [
-      "eslint --fix", 
+      "eslint --fix",
       "prettier --write"
-  ]
+    ]
   }
 }
